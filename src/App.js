@@ -9,9 +9,9 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 function App(props) {
-  const { posts }  = props;
-  
 
+  const { posts }  = props.state.profilePage;
+ 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,7 +20,7 @@ function App(props) {
         <div className="app-wrapper__content">
           <Routes>
             <Route path='/' element={<Profile posts={posts} />} />
-            <Route path='/messages/*' element={<Messages dialogs={props.dialogs} messages={props.messages} />} />
+            <Route path='/messages/*' element={<Messages messagesPage={props.state.messagesPage} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />
