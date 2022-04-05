@@ -5,13 +5,27 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
   const posts = props.posts;
 
+  const newPostElement = React.createRef();
+
   let postsElements = posts.map(post => <Post key={post.id} id={post.id} message={post.message} likes={post.likes} imgSrc={post.imgSrc} />)
 
+  const addPost = () => { 
+    const text = newPostElement.current.value;
+    alert(text) 
+  }
+
   return (
-    <div className={s.posts}>
-      {postsElements}
+    <div className={s.postBlock}>
+      <h3 className={s.heading}>My post</h3>
+      <div className="">
+        <textarea ref={newPostElement}></textarea>
+        <button onClick={addPost} className="">Add post</button>
+      </div>
+      <div className={s.posts}>
+        {postsElements}
+      </div>
     </div>
-  ) 
+  )
 }
 
 export default MyPosts
