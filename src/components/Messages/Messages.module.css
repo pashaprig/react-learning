@@ -1,0 +1,28 @@
+.messages_page_wrapper {
+    display: flex;
+}
+
+.dialogs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .active {
+    color: goldenrod;
+    text-decoration: none;
+  }
+
+  .messages {
+      margin-left: 50px;
+  }
+
+  .message {
+      margin: 0;
+      padding: 0;
+  }

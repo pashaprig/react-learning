@@ -1,0 +1,18 @@
+.nav {
+  grid-area: n;
+  background-color: bisque;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: goldenrod;
+  text-decoration: none;
+}
