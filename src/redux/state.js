@@ -22,8 +22,20 @@ let state = {
             { id: 4, name: 'Dima' },
             { id: 5, name: 'Stas' }
         ]
-    }
+    },
 
+    sidebar: {
+    }
+}
+
+export const addPost = (postMessage) => {
+    const newPost = {
+        id: 5,
+        message: postMessage,
+        likes: 0,
+        imgSrc: 'ulr'
+    };
+    state.profilePage.posts.push(newPost);
 }
 
 export default state;
