@@ -1,3 +1,5 @@
+import { renderEntireTree } from "../render";
+
 let state = {
     profilePage: {
         posts: [
@@ -36,6 +38,7 @@ export const addPost = (postMessage) => {
         imgSrc: 'ulr'
     };
     state.profilePage.posts.push(newPost);
+    renderEntireTree(state)
 }
 
 export default state;
