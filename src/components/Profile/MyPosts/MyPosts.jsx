@@ -3,22 +3,25 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  const posts = props.posts;
-
+  const posts = props.profilePage.posts;
   const newPostElement = React.createRef();
 
   let postsElements = posts.map(post => <Post key={post.id} id={post.id} message={post.message} likes={post.likes} imgSrc={post.imgSrc} />)
 
   const addPost = () => { 
+    props.addPost();
+  }
+
+  let onPostChange = () => {
     const text = newPostElement.current.value;
-    props.addPost(text);
+    props.updateNewPostText(text);
   }
 
   return (
     <div className={s.postBlock}>
       <h3 className={s.heading}>My post</h3>
       <div className="">
-        <textarea ref={newPostElement}></textarea>
+        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         <button onClick={addPost} className="">Add post</button>
       </div>
       <div className={s.posts}>

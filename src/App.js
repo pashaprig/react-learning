@@ -10,8 +10,6 @@ import Settings from './components/Settings/Settings';
 
 function App(props) {
 
-  const { posts }  = props.state.profilePage;
- 
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,7 +17,11 @@ function App(props) {
         <Navigation />
         <div className="app-wrapper__content">
           <Routes>
-            <Route path='/' element={<Profile posts={posts} addPost={props.addPost}/>} />
+            <Route path='/' element={<Profile profilePage={props.state.profilePage} 
+                                              addPost={props.addPost}
+                                              updateNewPostText={props.updateNewPostText}                                              
+            />} />
+                                              
             <Route path='/messages/*' element={<Messages messagesPage={props.state.messagesPage} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
